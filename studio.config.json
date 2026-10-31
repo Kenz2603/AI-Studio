@@ -1,0 +1,36 @@
+{
+  "studioName": "Personal AI Studio",
+  "owner": "Owner",
+  "mode": "single-owner-local",
+  "version": "0.1.0",
+  "git": {
+    "defaultBranch": "main",
+    "allowSecondaryBranches": false,
+    "autoCommit": false,
+    "autoPush": false,
+    "autoMerge": false,
+    "targetRemoteUrl": "https://github.com/Kenz2603/AI-Studio.git"
+  },
+  "paths": {
+    "workspaceRoot": "C:/AI-Studio",
+    "projectsDir": "projects",
+    "docsDir": "docs",
+    "gddDir": "docs/gdd",
+    "tasksDir": "docs/tasks",
+    "architectureDir": "docs/architecture",
+    "backupsDir": "storage/backups",
+    "approvalsDir": "storage/approvals",
+    "databasePath": "storage/studio.db"
+  },
+  "unity": {
+    "editorPath": "",
+    "hubPath": "",
+    "targetDimension": "2D"
+  },
+  "dashboard": {
+    "host": "127.0.0.1",
+    "clientPort": 5173,
+    "serverPort": 3001
+  }
+}
+

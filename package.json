@@ -1,0 +1,32 @@
+{
+  "name": "personal-ai-studio",
+  "version": "0.2.1",
+  "private": true,
+  "description": "Personal AI Studio - Single-Owner Multi-Agent Desktop Application (G2.1 Foundation)",
+  "main": "dist/main/main/index.js",
+  "scripts": {
+    "dev:renderer": "vite",
+    "build:main": "tsc -p tsconfig.main.json",
+    "build:renderer": "vite build",
+    "build": "npm run build:main && npm run build:renderer",
+    "start": "npm run build && node scripts/launch-electron.mjs",
+    "electron:dev": "npm run build:main && node scripts/dev-runner.mjs",
+    "typecheck": "tsc -p tsconfig.main.json --noEmit && tsc -p tsconfig.renderer.json --noEmit"
+  },
+  "dependencies": {
+    "lucide-react": "^1.16.0",
+    "react": "^19.1.0",
+    "react-dom": "^19.1.0"
+  },
+  "devDependencies": {
+    "@tailwindcss/vite": "^4.1.5",
+    "@types/node": "^24.0.0",
+    "@types/react": "^19.1.2",
+    "@types/react-dom": "^19.1.2",
+    "@vitejs/plugin-react": "^4.4.1",
+    "electron": "^36.2.0",
+    "tailwindcss": "^4.1.5",
+    "typescript": "^5.8.3",
+    "vite": "^6.3.4"
+  }
+}

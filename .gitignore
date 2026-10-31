@@ -1,0 +1,116 @@
+# =============================================================================
+# PERSONAL AI STUDIO - .gitignore
+# Targets: Security/Secrets, Windows OS, Node.js, SQLite/Backups, Unity 2D
+# =============================================================================
+
+# -----------------------------------------------------------------------------
+# 1. SECRETS, CREDENTIALS & TOKENS (STRICT PROTECTION)
+# -----------------------------------------------------------------------------
+.env
+.env.*
+!.env.example
+*.pem
+*.key
+*.pfx
+*.p12
+*secret*
+*credentials*
+*oauth*
+*.token
+
+# -----------------------------------------------------------------------------
+# 2. STUDIO LOCAL STORAGE, DATABASE & SNAPSHOT BACKUPS
+# -----------------------------------------------------------------------------
+storage/**
+!storage/
+!storage/**/.gitkeep
+!storage/backups/.gitkeep
+!storage/approvals/.gitkeep
+
+# -----------------------------------------------------------------------------
+# 3. NODE.JS & DASHBOARD
+# -----------------------------------------------------------------------------
+node_modules/
+**/node_modules/
+dist/
+**/dist/
+.vite/
+**/.vite/
+npm-debug.log*
+yarn-debug.log*
+yarn-error.log*
+pnpm-debug.log*
+*.tsbuildinfo
+
+# -----------------------------------------------------------------------------
+# 4. UNITY 2D PROJECTS (Supports nested projects under projects/*/)
+# -----------------------------------------------------------------------------
+**/[Ll]ibrary/
+**/[Tt]emp/
+**/[Oo]bj/
+**/[Bb]uild/
+**/[Bb]uilds/
+**/[Ll]ogs/
+**/[Uu]ser[Ss]ettings/
+**/[Mm]emoryCaptures/
+**/[Rr]ecordings/
+**/[Aa]ssets/AssetStoreTools*
+**/[Aa]ssets/AddressableAssetsData/*/*.bin*
+**/[Aa]ssets/StreamingAssets/aa.meta
+**/[Aa]ssets/StreamingAssets/aa/*
+
+# Unity generated IDE & Visual Studio files
+.vs/
+**/.vs/
+.vscode/
+**/.vscode/
+.idea/
+**/.idea/
+ExportedObj/
+**/ExportedObj/
+.consulo/
+**/.consulo/
+*.csproj
+*.unityproj
+*.sln
+*.suo
+*.tmp
+*.user
+*.userprefs
+*.pidb
+*.booproj
+*.svd
+*.pdb
+*.mdb
+*.opendb
+*.VC.db
+*.pidb.meta
+*.pdb.meta
+*.mdb.meta
+
+# Unity Crash & Build Artifacts
+sysinfo.txt
+*.apk
+*.aab
+*.unitypackage
+*.app
+crashlytics-build.properties
+
+# -----------------------------------------------------------------------------
+# 5. WINDOWS OS & TEMPORARY FILES
+# -----------------------------------------------------------------------------
+Thumbs.db
+Thumbs.db:encryptable
+ehthumbs.db
+ehthumbs_vista.db
+*.stackdump
+[Dd]esktop.ini
+$RECYCLE.BIN/
+*.cab
+*.msi
+*.msix
+*.msm
+*.msp
+*.lnk
+*~
+

@@ -1,0 +1,493 @@
+@import "tailwindcss";
+
+@layer base {
+  html,
+  body,
+  #root {
+    height: 100%;
+    width: 100%;
+    margin: 0;
+    padding: 0;
+    user-select: none;
+    font-family:
+      'Inter',
+      'Segoe UI',
+      -apple-system,
+      BlinkMacSystemFont,
+      sans-serif;
+  }
+}
+
+/* Thanh cuộn tinh gọn cho ứng dụng Desktop */
+::-webkit-scrollbar {
+  width: 6px;
+  height: 6px;
+}
+
+::-webkit-scrollbar-track {
+  background: transparent;
+}
+
+::-webkit-scrollbar-thumb {
+  background: rgba(148, 163, 184, 0.25);
+  border-radius: 9999px;
+}
+
+::-webkit-scrollbar-thumb:hover {
+  background: rgba(148, 163, 184, 0.45);
+}
+
+/* ========================================================
+   HIỂN THỊ TRONG SUỐT CHO TOÀN BỘ CÁC BẢNG THEO TỪNG TRANG
+   (Transparent & Glassmorphic Tables Across All Pages)
+   ======================================================== */
+table,
+.data-table,
+.table-container {
+  background-color: transparent !important;
+  background: transparent !important;
+}
+
+table thead,
+table thead tr,
+.data-table thead,
+.data-table thead tr {
+  background-color: rgba(0, 0, 0, 0.22) !important;
+  backdrop-filter: blur(8px);
+  -webkit-backdrop-filter: blur(8px);
+}
+
+:not(.dark) table thead,
+:not(.dark) table thead tr,
+:not(.dark) .data-table thead,
+:not(.dark) .data-table thead tr {
+  background-color: rgba(255, 255, 255, 0.45) !important;
+  backdrop-filter: blur(8px);
+  -webkit-backdrop-filter: blur(8px);
+}
+
+table tbody,
+table tbody tr,
+.data-table tbody,
+.data-table tbody tr {
+  background-color: transparent !important;
+}
+
+table tbody tr:hover,
+.data-table tbody tr:hover {
+  background-color: rgba(255, 255, 255, 0.08) !important;
+}
+
+:not(.dark) table tbody tr:hover,
+:not(.dark) .data-table tbody tr:hover {
+  background-color: rgba(0, 0, 0, 0.05) !important;
+}
+
+table th,
+table td,
+.data-table th,
+.data-table td {
+  background-color: transparent !important;
+}
+
+/* Thẻ bao bọc bảng (Table wrapper containers) hiển thị trong suốt kính mờ */
+div:has(> .overflow-x-auto > table),
+div:has(> table),
+.table-responsive {
+  background-color: rgba(9, 13, 22, 0.35) !important;
+  backdrop-filter: blur(12px) !important;
+  -webkit-backdrop-filter: blur(12px) !important;
+}
+
+:not(.dark) div:has(> .overflow-x-auto > table),
+:not(.dark) div:has(> table),
+:not(.dark) .table-responsive {
+  background-color: rgba(255, 255, 255, 0.55) !important;
+  backdrop-filter: blur(12px) !important;
+  -webkit-backdrop-filter: blur(12px) !important;
+}
+
+/* ========================================================
+   CHUẨN HÓA GIAO DIỆN SÁNG CHO TOÀN BỘ CÁC TRANG & MODAL
+   (Universal Light Mode Normalization for All Pages & Modals)
+   ======================================================== */
+:not(.dark) .bg-slate-950,
+:not(.dark) .bg-slate-900,
+:not(.dark) .bg-slate-800,
+:not(.dark) .bg-slate-700,
+:not(.dark) .bg-zinc-950,
+:not(.dark) .bg-zinc-900,
+:not(.dark) .bg-zinc-800,
+:not(.dark) .bg-zinc-700,
+:not(.dark) .bg-gray-950,
+:not(.dark) .bg-gray-900,
+:not(.dark) .bg-gray-800,
+:not(.dark) .bg-gray-700 {
+  background-color: rgba(255, 255, 255, 0.85) !important;
+  color: #09090b !important;
+  border-color: rgba(226, 232, 240, 0.9) !important;
+}
+
+:not(.dark) .bg-slate-950\/40,
+:not(.dark) .bg-slate-950\/50,
+:not(.dark) .bg-slate-950\/60,
+:not(.dark) .bg-slate-950\/70,
+:not(.dark) .bg-slate-950\/80,
+:not(.dark) .bg-slate-950\/90,
+:not(.dark) .bg-slate-900\/40,
+:not(.dark) .bg-slate-900\/50,
+:not(.dark) .bg-slate-900\/60,
+:not(.dark) .bg-slate-900\/70,
+:not(.dark) .bg-slate-900\/80,
+:not(.dark) .bg-slate-900\/90,
+:not(.dark) .bg-slate-800\/30,
+:not(.dark) .bg-slate-800\/40,
+:not(.dark) .bg-slate-800\/50,
+:not(.dark) .bg-slate-800\/60,
+:not(.dark) .bg-slate-800\/70,
+:not(.dark) .bg-slate-800\/80,
+:not(.dark) .bg-slate-800\/90,
+:not(.dark) .bg-slate-700\/40,
+:not(.dark) .bg-slate-700\/50,
+:not(.dark) .bg-slate-700\/60,
+:not(.dark) .bg-zinc-950\/40,
+:not(.dark) .bg-zinc-950\/50,
+:not(.dark) .bg-zinc-950\/60,
+:not(.dark) .bg-zinc-950\/70,
+:not(.dark) .bg-zinc-950\/80,
+:not(.dark) .bg-zinc-900\/40,
+:not(.dark) .bg-zinc-900\/50,
+:not(.dark) .bg-zinc-900\/60,
+:not(.dark) .bg-zinc-900\/70,
+:not(.dark) .bg-zinc-900\/80,
+:not(.dark) .bg-zinc-800\/40,
+:not(.dark) .bg-zinc-800\/50,
+:not(.dark) .bg-zinc-800\/60,
+:not(.dark) .bg-zinc-800\/70,
+:not(.dark) .bg-zinc-800\/80,
+:not(.dark) .bg-zinc-800\/90 {
+  background-color: rgba(255, 255, 255, 0.75) !important;
+  color: #09090b !important;
+  border-color: rgba(226, 232, 240, 0.8) !important;
+}
+
+/* Badges, Chips, Pills, and Tags in Light Mode */
+:not(.dark) span.bg-slate-800,
+:not(.dark) span.bg-slate-900,
+:not(.dark) span.bg-slate-950,
+:not(.dark) span.bg-slate-700,
+:not(.dark) span.bg-zinc-800,
+:not(.dark) span.bg-zinc-900,
+:not(.dark) span.bg-zinc-950,
+:not(.dark) span.bg-zinc-700,
+:not(.dark) span.bg-black,
+:not(.dark) span.bg-black\/10,
+:not(.dark) span[class*="bg-slate-800"],
+:not(.dark) span[class*="bg-slate-900"],
+:not(.dark) span[class*="bg-slate-950"],
+:not(.dark) span[class*="bg-zinc-800"],
+:not(.dark) span[class*="bg-zinc-900"],
+:not(.dark) span[class*="bg-zinc-950"],
+:not(.dark) span[class*="bg-slate-700"],
+:not(.dark) span[class*="bg-black"],
+:not(.dark) code.bg-slate-800,
+:not(.dark) code.bg-slate-900,
+:not(.dark) code.bg-zinc-800,
+:not(.dark) code.bg-zinc-900,
+:not(.dark) code.bg-slate-950,
+:not(.dark) code.bg-zinc-950,
+:not(.dark) div.bg-slate-800,
+:not(.dark) div.bg-slate-900,
+:not(.dark) div.bg-slate-950,
+:not(.dark) div.bg-zinc-800,
+:not(.dark) div.bg-zinc-900,
+:not(.dark) div.bg-zinc-950 {
+  background-color: #f1f5f9 !important;
+  color: #1e293b !important;
+  border-color: #cbd5e1 !important;
+}
+
+:not(.dark) span.bg-slate-800 *,
+:not(.dark) span.bg-slate-900 *,
+:not(.dark) span.bg-slate-950 *,
+:not(.dark) span.bg-zinc-800 *,
+:not(.dark) span.bg-zinc-900 *,
+:not(.dark) span.bg-zinc-950 *,
+:not(.dark) span[class*="bg-slate-800"] *,
+:not(.dark) span[class*="bg-slate-900"] *,
+:not(.dark) span[class*="bg-slate-950"] *,
+:not(.dark) span[class*="bg-zinc-800"] *,
+:not(.dark) span[class*="bg-zinc-900"] *,
+:not(.dark) span[class*="bg-zinc-950"] *,
+:not(.dark) span[class*="bg-black"] * {
+  color: #1e293b !important;
+}
+
+/* Progress bar tracks in Light Mode */
+:not(.dark) .w-full.bg-slate-800,
+:not(.dark) .w-full.bg-zinc-800,
+:not(.dark) .rounded-full.bg-slate-800,
+:not(.dark) .rounded-full.bg-zinc-800 {
+  background-color: #e2e8f0 !important;
+}
+
+/* Inputs, Textareas, Selects in Light Mode */
+:not(.dark) input.bg-slate-950,
+:not(.dark) select.bg-slate-950,
+:not(.dark) textarea.bg-slate-950,
+:not(.dark) input.bg-slate-900,
+:not(.dark) select.bg-slate-900,
+:not(.dark) textarea.bg-slate-900,
+:not(.dark) input.bg-zinc-950,
+:not(.dark) select.bg-zinc-950,
+:not(.dark) textarea.bg-zinc-950,
+:not(.dark) input.bg-zinc-900,
+:not(.dark) select.bg-zinc-900,
+:not(.dark) textarea.bg-zinc-900 {
+  background-color: #ffffff !important;
+  border-color: #cbd5e1 !important;
+  color: #0f172a !important;
+}
+
+:not(.dark) input::placeholder,
+:not(.dark) textarea::placeholder {
+  color: #94a3b8 !important;
+}
+
+/* Borders and Dividers in Light Mode */
+:not(.dark) .border-slate-950,
+:not(.dark) .border-slate-900,
+:not(.dark) .border-slate-800,
+:not(.dark) .border-slate-800\/90,
+:not(.dark) .border-slate-800\/80,
+:not(.dark) .border-slate-800\/70,
+:not(.dark) .border-slate-800\/60,
+:not(.dark) .border-slate-800\/50,
+:not(.dark) .border-slate-800\/40,
+:not(.dark) .border-slate-700,
+:not(.dark) .border-zinc-900,
+:not(.dark) .border-zinc-800,
+:not(.dark) .border-zinc-700 {
+  border-color: #e2e8f0 !important;
+}
+
+:not(.dark) .divide-slate-900,
+:not(.dark) .divide-slate-800,
+:not(.dark) .divide-slate-800\/60,
+:not(.dark) .divide-slate-700,
+:not(.dark) .divide-zinc-800,
+:not(.dark) .divide-zinc-700 {
+  border-color: #e2e8f0 !important;
+}
+
+/* Hover background states in Light Mode */
+:not(.dark) .hover\:bg-slate-800:hover,
+:not(.dark) .hover\:bg-slate-800\/30:hover,
+:not(.dark) .hover\:bg-slate-800\/50:hover,
+:not(.dark) .hover\:bg-slate-800\/60:hover,
+:not(.dark) .hover\:bg-slate-700:hover,
+:not(.dark) .hover\:bg-zinc-800:hover,
+:not(.dark) .hover\:bg-zinc-700:hover,
+:not(.dark) .hover\:bg-zinc-900:hover,
+:not(.dark) .hover\:bg-slate-900:hover {
+  background-color: #f1f5f9 !important;
+  color: #0f172a !important;
+}
+
+/* Text colors in Light Mode */
+:not(.dark) .text-slate-100,
+:not(.dark) .text-slate-200,
+:not(.dark) .text-slate-300 {
+  color: #1e293b !important;
+}
+
+:not(.dark) .text-slate-400 {
+  color: #475569 !important;
+}
+
+:not(.dark) .text-slate-500 {
+  color: #64748b !important;
+}
+
+:not(.dark) .text-slate-600 {
+  color: #94a3b8 !important;
+}
+
+/* White text handling: NEVER turn text black on colored buttons or dark badges! */
+:not(.dark) .text-white:not(button):not(button *):not([class*="bg-emerald-"]):not([class*="bg-emerald-"] *):not([class*="bg-indigo-"]):not([class*="bg-indigo-"] *):not([class*="bg-blue-"]):not([class*="bg-blue-"] *):not([class*="bg-rose-"]):not([class*="bg-rose-"] *):not([class*="bg-violet-"]):not([class*="bg-violet-"] *):not([class*="bg-amber-"]):not([class*="bg-amber-"] *):not([class*="bg-purple-"]):not([class*="bg-purple-"] *) {
+  color: #09090b !important;
+}
+
+:not(.dark) button.text-white,
+:not(.dark) button [class*="text-white"],
+:not(.dark) [class*="bg-indigo-"] .text-white,
+:not(.dark) [class*="bg-indigo-"].text-white,
+:not(.dark) [class*="bg-emerald-"] .text-white,
+:not(.dark) [class*="bg-emerald-"].text-white,
+:not(.dark) [class*="bg-rose-"] .text-white,
+:not(.dark) [class*="bg-rose-"].text-white,
+:not(.dark) [class*="bg-blue-"] .text-white,
+:not(.dark) [class*="bg-blue-"].text-white,
+:not(.dark) [class*="bg-violet-"] .text-white,
+:not(.dark) [class*="bg-violet-"].text-white {
+  color: #ffffff !important;
+}
+
+/* Primary Action Buttons */
+.btn-primary,
+button.bg-indigo-600,
+button.bg-blue-600 {
+  background-color: #4f46e5 !important;
+  color: #ffffff !important;
+  font-weight: 600;
+  border: none;
+}
+.btn-primary:hover,
+button.bg-indigo-600:hover,
+button.bg-blue-600:hover {
+  background-color: #4338ca !important;
+  color: #ffffff !important;
+}
+
+.dark .btn-primary,
+.dark button.bg-indigo-600,
+.dark button.bg-blue-600 {
+  background-color: #6366f1 !important;
+  color: #ffffff !important;
+}
+.dark .btn-primary:hover,
+.dark button.bg-indigo-600:hover,
+.dark button.bg-blue-600:hover {
+  background-color: #4f46e5 !important;
+}
+
+/* Secondary Action Buttons */
+:not(.dark) .btn-secondary {
+  background-color: #f8fafc;
+  color: #1e293b;
+  border-color: #cbd5e1;
+}
+:not(.dark) .btn-secondary:hover {
+  background-color: #f1f5f9;
+}
+
+/* Neutral / Outlined / Secondary Buttons in Light Mode */
+:not(.dark) button.border-slate-700,
+:not(.dark) button.border-slate-800,
+:not(.dark) button[class*="border-slate-700"],
+:not(.dark) button[class*="border-slate-800"],
+:not(.dark) button[class*="border-zinc-700"],
+:not(.dark) button[class*="border-zinc-800"] {
+  border-color: #cbd5e1 !important;
+  color: #334155 !important;
+}
+
+:not(.dark) button.bg-slate-800,
+:not(.dark) button.bg-slate-900,
+:not(.dark) button.bg-zinc-800,
+:not(.dark) button.bg-zinc-900 {
+  background-color: #f1f5f9 !important;
+  color: #1e293b !important;
+  border-color: #cbd5e1 !important;
+}
+
+:not(.dark) button.bg-black,
+:not(.dark) button.bg-slate-950,
+:not(.dark) button[class*="bg-black"] {
+  background-color: #4f46e5 !important;
+  color: #ffffff !important;
+  border-color: #4f46e5 !important;
+}
+
+:not(.dark) button.bg-black *,
+:not(.dark) button.bg-slate-950 *,
+:not(.dark) button[class*="bg-black"] * {
+  color: #ffffff !important;
+}
+
+:not(.dark) button.bg-black:hover,
+:not(.dark) button.bg-slate-950:hover,
+:not(.dark) button[class*="bg-black"]:hover {
+  background-color: #4338ca !important;
+  color: #ffffff !important;
+}
+
+.page-title {
+  font-size: 1.5rem;
+  font-weight: 700;
+  color: #f4f4f5;
+  margin: 0;
+}
+:not(.dark) .page-title {
+  color: #09090b;
+}
+
+.page-subtitle {
+  font-size: 0.875rem;
+  color: #a1a1aa;
+  margin-top: 0.25rem;
+}
+:not(.dark) .page-subtitle {
+  color: #52525b;
+}
+
+.page-header-row {
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-start;
+  margin-bottom: 1.5rem;
+}
+
+.panel-title {
+  font-size: 1rem;
+  font-weight: 600;
+  color: #f4f4f5;
+  margin: 0 0 0.75rem 0;
+}
+:not(.dark) .panel-title {
+  color: #09090b;
+}
+
+.form-label {
+  display: block;
+  font-size: 0.75rem;
+  color: #a1a1aa;
+  margin-bottom: 0.25rem;
+}
+:not(.dark) .form-label {
+  color: #52525b;
+}
+
+/* ========================================================
+   CHUẨN HÓA CUỘN & VÙNG NHÌN AN TOÀN CHO TOÀN BỘ MODAL POPUP
+   (Universal Modal Safe Viewport & Scrollability Guard)
+   ======================================================== */
+div[class*="fixed inset-0"][class*="z-50"] {
+  overflow-y: auto !important;
+  -webkit-overflow-scrolling: touch !important;
+  overscroll-behavior: contain !important;
+}
+
+div[class*="fixed inset-0"][class*="z-50"] > div {
+  margin-top: auto !important;
+  margin-bottom: auto !important;
+  max-height: 92vh !important;
+}
+
+/* ========================================================
+   TÙY CHỈNH MÀU TOÀN BỘ CHỮ HỆ THỐNG (GLOBAL TEXT COLOR)
+   ======================================================== */
+[data-custom-text="true"] h1,
+[data-custom-text="true"] h2,
+[data-custom-text="true"] h3,
+[data-custom-text="true"] h4,
+[data-custom-text="true"] p,
+[data-custom-text="true"] table,
+[data-custom-text="true"] th,
+[data-custom-text="true"] td,
+[data-custom-text="true"] label,
+[data-custom-text="true"] span:not([data-preserve-color="true"]):not(button *):not([class*="btn"] *),
+[data-custom-text="true"] .studio-nav-label {
+  color: var(--studio-custom-text-color) !important;
+}
+
